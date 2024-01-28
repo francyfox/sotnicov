@@ -1,7 +1,6 @@
-// Or separate like DDD
 import { nanoid } from 'nanoid';
 
-const randomID = () => nanoid(5);
+export const randomID = () => nanoid(5);
 export const canbanMockData = [
   {
     id: randomID(),
