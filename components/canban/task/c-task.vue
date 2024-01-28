@@ -15,7 +15,10 @@ const { removeTask } = store;
 </script>
 
 <template>
-  <div class="c-task">
+  <div class="c-task"
+       draggable="true"
+       :data-index="props.taskIndex"
+  >
     <div class="w-full flex flex-col">
       <div class="w-full flex items-start">
         <button type="button"
@@ -38,7 +41,10 @@ const { removeTask } = store;
         {{ props.text }}
       </div>
     </div>
-    <button type="button" title="drag and drop" class="c-task-dnd">
+    <button type="button"
+            title="drag and drop"
+            class="c-task-dnd"
+    >
       <Icon size="32" name="mdi:drag-horizontal"/>
     </button>
   </div>

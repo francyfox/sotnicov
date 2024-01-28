@@ -4,6 +4,15 @@ import type { IStage } from '~/components/canban/canban.types';
 import { canbanMockData, randomID } from '~/components/canban/canban.data';
 import { arrElementMoveToIndex } from '~/util/util';
 
+type TaskLocation = {
+  stageIndex: number
+  taskIndex: number
+}
+
+type Destination = {
+  x: TaskLocation
+  y: TaskLocation
+}
 export const useCanbanStore = defineStore('canban', () => {
   const data: Ref<IStage[]> = ref(canbanMockData);
 
@@ -38,8 +47,11 @@ export const useCanbanStore = defineStore('canban', () => {
     data.value[stageIndex].stack[taskIndex].text = text;
   }
 
-  function translateTask(stageIndex: number, taskIndex: number, toIndex: number) {
-    data.value[stageIndex].stack = arrElementMoveToIndex(data.value[stageIndex].stack, taskIndex, toIndex);
+  function translateTask(dest: Destination) {
+    const { x, y } = dest;
+
+    const task = data.value[x.stageIndex].stack.splice(x.taskIndex, 1)[0];
+    data.value[y.stageIndex].stack.splice(y.taskIndex, 0, task);
   }
 
   return {
