@@ -2,7 +2,6 @@ import { defineStore } from 'pinia';
 import type { Ref } from 'vue';
 import type { IStage } from '~/components/canban/canban.types';
 import { canbanMockData, randomID } from '~/components/canban/canban.data';
-import { arrElementMoveToIndex } from '~/util/util';
 
 type TaskLocation = {
   stageIndex: number

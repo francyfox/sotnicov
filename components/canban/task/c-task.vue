@@ -3,6 +3,8 @@ import type { TaskProps } from '~/components/canban/canban.types';
 import { copyToClipboard } from '~/util/util';
 import ADelete from '~/components/action/a-delete.vue';
 import { useCanbanStore } from '~/stores/canban';
+import { storeToRefs } from 'pinia';
+import { useRouter } from 'vue-router';
 
 const url = useRequestURL();
 
@@ -11,7 +13,19 @@ const props = withDefaults(defineProps<TaskProps>(), {
 });
 
 const store = useCanbanStore();
+const { data } = storeToRefs(store);
 const { removeTask } = store;
+
+const router = useRouter();
+
+function goToTaskPage() {
+  router.push({
+    path: `task/${props.id}`,
+    params: {
+      id: props.id,
+    }
+  })
+}
 </script>
 
 <template>
@@ -30,7 +44,11 @@ const { removeTask } = store;
           <Icon name="material-symbols:link" />
         </button>
 
-        <a href="#" @click.prevent class="c-task-id" title="go to task">
+        <a class="c-task-id"
+           title="go to task"
+           href="#"
+           @click.prevent="goToTaskPage"
+        >
           # Task Id: {{ props.id }}
         </a>
 
@@ -38,7 +56,7 @@ const { removeTask } = store;
       </div>
 
       <div class="c-task-text">
-        {{ props.text }}
+        <textarea v-model="data[props.stageIndex].stack[props.taskIndex].text"/>
       </div>
     </div>
     <button type="button"
@@ -64,6 +82,12 @@ const { removeTask } = store;
 
   &-text {
     @apply p-1;
+
+    textarea {
+      @apply w-full flex bg-transparent border-r-0;
+
+      box-sizing: border-box;
+    }
   }
 
   &-dnd {
