@@ -1,7 +1,6 @@
 import twConfig from './tailwind.config'
 export default defineNuxtConfig({
   ssr: false,
-  buildDir: 'dist',
   devtools: { enabled: true },
   modules: [
     ['@nuxtjs/tailwindcss', twConfig],
