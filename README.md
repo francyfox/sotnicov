@@ -1,75 +1,40 @@
-# Nuxt 3 Minimal Starter
+# Sotnicov canban and charts
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Canban
+Требования:
+- Использование Vue / Nuxt 3 и Pinia.
+- Использование Tailwind CSS для оформления.
 
+Требования по функционалу:
+1. Должна быть возможность создавать стадии (колонки).
+
+   1.1. Должна быть возможность указать название стадии.
+
+   1.2. Должна быть возможность удаления стадии.
+
+2. Должна быть возможность добавление задачи в любую из стадий.
+   2.1. Должна быть возможность добавление текст к задаче.
+   2.2. Должна быть возможность редактирования текста задачи.
+
+3. Должна быть возможность удаление задачи из стадии.
+4. Должна быть возможность перетаскивать задачи между стадиями.
+
+5. При клике по задаче, пользователь должен попадать на детальную страницу этой задачи.
+
+
+## Charts
+Url to [figma](https://www.figma.com/file/tVFiPnxVVyrT0z9hhQGCSt/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%E2%84%962?type=design&node-id=5%3A295&mode=dev)
+1. Сверстать два любых графика из трех предложенных.
+2. При выполнении использовать библиотеку echarts или любую другую на ваш выбор.
+3. Исходный код залить на GitHub и скинуть ссылку на репозиторий.
 ## Setup
 
 Make sure to install the dependencies:
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
 # bun
 bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
 
 # bun
 bun run dev
 ```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

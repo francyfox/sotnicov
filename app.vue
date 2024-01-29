@@ -1,5 +1,9 @@
+<script setup>
+import '#assets/base.pcss';
+</script>
+
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
