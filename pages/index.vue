@@ -3,7 +3,10 @@ import CCanban from '~/components/canban/c-canban.vue';
 </script>
 
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col items-start">
+    <NuxtLink to="/chart" class="nav-link">
+      Charts
+    </NuxtLink>
     <div class="flex text-4xl mb-5">
       <h1> Canban</h1>
       <a href="#">

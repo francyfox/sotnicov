@@ -9,7 +9,7 @@ useHead({
 
 <template>
   <div class="task-page">
-    <NuxtLink to="/" class="flex bg-cyan-900 hover:bg-amber-700 transition-colors p-1 mb-2">
+    <NuxtLink to="/" class="nav-link">
       Go back
     </NuxtLink>
 
